@@ -1,13 +1,110 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
- */
+body {
+	/*margin: 0px 150px 10px 150px;*/
+	color: #ccc;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 18px; 
+	background-color: #0a6298;
+	background-image:url('/assets/background.jpg');
+	background-repeat: no-repeat;
+	background-position: center top;
+}
+
+#cabecalho {
+	position: absolute;
+	top:0px;
+	left: 200px;
+	height: 200px;
+	width: 970px;
+	font-size:66px;
+	color: #000000;
+	text-transform: uppercase;
+
+
+	/* Internet Explorer 10 */
+	display:-ms-flexbox;
+	-ms-flex-pack:center;
+	-ms-flex-align:center;
+
+	/* Firefox */
+	display:-moz-box;
+	-moz-box-pack:center;
+	-moz-box-align:center;
+
+	/* Safari, Opera, and Chrome */
+	display:-webkit-box;
+	-webkit-box-pack:center;
+	-webkit-box-align:center;
+
+	/* W3C */
+	display:box;
+	box-pack:center;
+	box-align:center;
+}
+
+#conteudo11 {
+	position: relative;
+	top:0px;
+	left: 0px;
+	text-align: left; 
+	height: 900px;
+	width: 700px;
+	margin: 0 auto; 
+	background: white;
+	border: 1px solid black;
+}
+
+#conteudo22 { 
+	position: relative;
+	top:0px;
+	left:0px;
+	text-align: left; 
+	height: 900px;
+	width: 270px;
+	margin: 0 auto; 
+	background: Gainsboro;
+	border: 1px solid black;
+}
+
+#conteudo1 {
+	position: absolute;
+	top:200px;
+	left: 200px;
+	height: 900px;
+	width: 700px;
+	background: white;
+	border: 1px solid black;
+}
+
+#conteudo2 {
+	position: absolute;
+	top:200px;
+	left: 900px;
+	height: 900px;
+	width: 270px;
+	background: Gainsboro;
+	border: 1px solid black;
+}
+
+
+h1{
+	font-size:30px;
+	color: #000000;
+	text-transform: uppercase;
+}
+
+h2, h3, h4, h5, h6 {
+	color:#fff;
+	font-weight:400;
+	padding: 0;
+	/*margin: 0 0 10px 0;*/
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+h2 { font-size:26px; margin-bottom: 30px; line-height: 30px; }
+h3 { font-size:20px; line-height: 24px }
+h4 { font-size:18px }
+h5 { font-size:16px }
+h6 { font-size:12px }
+
+p { color:black; font-size:12px; text-align: justify; margin: 0 0 10px 0; padding: 0 }

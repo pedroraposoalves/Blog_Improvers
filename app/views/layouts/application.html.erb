@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--<title>Blog</title>-->
+  <title>Blog dos Zés</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
+
 <body>
 
-<%= yield %>
+<div id = "cabecalho" >
+	Blog dos Zés
+</div>
+
+<div id="conteudo1">
+	<%= yield %>
+</div>
+
+<div id="conteudo2"> 
+	<p>olá</p>
+</div>
 
 </body>
+
 </html>
