@@ -1,5 +1,10 @@
 <% @posts.each do |post| %>
 <h2><%= link_to post.titulo, post %></h2>
+
+<p id = "centrar">
+  <%= image_tag post.avatar.url (:small)%>
+</p>
+
 <p><%= post.conteudo %></p>
 <%= link_to 'Ver mais', post %>
 <%= link_to '[Editar]', edit_post_path(post) %>
