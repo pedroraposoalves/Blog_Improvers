@@ -1,5 +1,5 @@
 class ComentariosController < ApplicationController
-  before_filter :autenticacao, :only => [:destroy]
+  before_filter :authorize_blogger!, :only => [:destroy]
 
   def create
     @post = Post.find(params[:post_id])

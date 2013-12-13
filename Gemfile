@@ -29,6 +29,17 @@ gem 'jbuilder', '~> 1.2'
 
 gem "paperclip", "~> 3.0"
 
+gem 'devise'
+
+#better errors
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+end
+
+gem 'annotate'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

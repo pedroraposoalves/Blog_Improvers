@@ -1,0 +1,10 @@
+<%- if user_signed_in? %>
+  <p>Bem-Vindo <%= current_user.name %><br />
+  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %><br />
+  <%= link_to 'Edit profile', edit_user_registration_path(@user)%></p> 
+<%- else %>
+  <p>
+    <%= link_to 'Register', new_user_registration_path %> |
+    <%= link_to 'Sign in', new_user_session_path %>
+  </p>
+<%- end %>

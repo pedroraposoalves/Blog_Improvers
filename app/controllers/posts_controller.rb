@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_filter :autenticacao, :except =>[:index, :show]
+  before_filter :authorize_blogger!, :except =>[:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   # GET /posts

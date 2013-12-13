@@ -13,34 +13,41 @@
 <body>
 
 <header>
-	<nav class="navbar navbar-inverse" role="navigation">
-  		<!-- Brand and toggle get grouped for better mobile display -->
-  		<div class="navbar-header">
-    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      			<span class="glyphicon glyphicon-home"></span>
-      			<span class="sr-only">Toggle navigation</span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-    		</button>
-    		<%= link_to 'Home', root_path, class: 'navbar-brand' %>
-  		</div>
+  <div>
+    <h1>BLOG DOS ZÉS</h1>
+  </div>
+  <nav class="navbar navbar-inverse" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="glyphicon glyphicon-home"></span>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'Home', root_path, class: 'navbar-brand' %>
+      </div>
 
-  		<div class="navbar-right">
-  			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      			<span class="glyphicon glyphicon-home"></span>
-      			<span class="sr-only">Toggle navigation</span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-      			<span class="icon-bar"></span>
-    		</button>
-    		<%= link_to 'New Post', new_post_path, class: 'navbar-brand' %>
-  		</div>
-	</nav>
+      <div class="navbar-right">
+        <div id="secondaryContent" class="text-left">
+          <%= render 'devise/common/session' %>
+        </div>
+
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="glyphicon glyphicon-home"></span>
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'New Post', new_post_path, class: 'navbar-brand' %>
+      </div>
+  </nav>
 </header>
 
 <main role="main">
-	<%=yield%>
+  <%=yield%>
 <main>
 
 </body>

@@ -29,22 +29,22 @@
 <hr />
 <% end %>
  
-<h2>Adicione um comentario:</h2>
+<h4>Adicione um comentário:</h4>
 <%= form_for([@post, @post.comentarios.build]) do |f| %>
-  <div class="field">
-    <%= f.label :autor %><br />
-    <%= f.text_field :autor %>
-  </div>
-  <div class="field">
-    <%= f.label :conteudo %><br />
-    <%= f.text_area :conteudo %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <form role="form">
+    <div class="form-group">
+      <label for="InputAutor">Autor</label>
+      <%= f.text_field :autor, :class => "form-control", :placeholder => "Insira Autor" %>
+    </div>
+    <div class="form-group">
+      <label for="InputConteudo">Conteúdo</label>
+      <%= f.text_area :conteudo, :rows => 3, :class => "form-control", :placeholder => "Insira conteúdo" %>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
 <% end %>
  
 <br />
- 
-<%= link_to 'Edit Post', edit_post_path(@post) %> |
-<%= link_to 'Back to Posts', posts_path %>
+
+<%= link_to 'Editar Post', edit_post_path(@post), :class=>"btn btn-default" %>
+<%= link_to 'Back', posts_path, :class=>"btn btn-primary" %>
