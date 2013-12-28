@@ -46,7 +46,14 @@ group :doc do
 end
 
 gem 'geocoder'
+
 gem 'gmaps4rails'
+
+gem 'acts-as-taggable-on'
+
+gem 'will_paginate', '~> 3.0.5'
+
+gem 'bootstrap-will_paginate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
