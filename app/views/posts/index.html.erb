@@ -1,21 +1,26 @@
 <% @posts.each do |post| %>
-<div class="row">
-  <div class="col-sm-12 col-md-12">
-    <div class="thumbnail">
+  <h1><%= link_to post.titulo, post %></h1>
+  <hr>
+  <p>Created: <%=post.created_at%> | Edit: <%=post.updated_at%></p>
+  <hr>
+  <div class="img-responsive">
+    <p style="text-align: center">
       <%= image_tag post.avatar.url (:small)%>
-      <div class="caption">
-        <h3><%= link_to post.titulo, post %></h3>
-        <p><%= post.conteudo %></p>
-        <p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
-        <p>
-        	<%= link_to 'Ver Mais', post, class: 'btn btn-primary' %>
-          <% if user_signed_in? %>
-        	<%= link_to 'Editar', edit_post_path(post), class: 'btn btn-default' %>
-        	<%= link_to 'Excluir', post, class: 'btn btn-default', :confirm => 'Tem certeza?', :method => :delete %>
-          <% end %>
-        </p>
-      </div>
-    </div>
+    </p>
   </div>
-</div>
+  <!--<img src="post.avatar.url" class="img-responsive">-->
+  <hr>
+  <p><%= post.conteudo %></p>
+  <p>Tags: <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %></p>
+  <p>
+  <%= link_to 'Ver Mais', post, class: 'btn btn-primary' %>
+  <% if user_signed_in? %>
+    <%= link_to 'Editar', edit_post_path(post), class: 'btn btn-default' %>
+    <%= link_to 'Excluir', post, class: 'btn btn-default', :confirm => 'Tem certeza?', :method => :delete %>
+  <% end %>
+  </p>
 <%end%>
+      
+<div class = "pager">
+  <%= will_paginate @posts %>
+</div>

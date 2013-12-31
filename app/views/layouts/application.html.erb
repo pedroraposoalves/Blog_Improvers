@@ -5,53 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "Blog dos Zés" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Blog do Zés" %>">
-  <%= stylesheet_link_tag    "bootstrap", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "bootstrap", "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "bootstrap", "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 
 <body>
-
-<header>
-  <div>
-    <h1>BLOG DOS ZÉS</h1>
-  </div>
-  <nav class="navbar navbar-inverse" role="navigation">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="glyphicon glyphicon-home"></span>
+  <header>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-        </button>
-        <%= link_to 'Home', root_path, class: 'navbar-brand' %>
-      </div>
-
-      <div class="navbar-right">
-        <div id="secondaryContent" class="text-left">
-          <%= render 'devise/common/session' %>
+          </button>
+          <%= link_to 'Blog dos Zés', root_path, class: 'navbar-brand' %>
         </div>
 
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="glyphicon glyphicon-home"></span>
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <%= link_to 'New Post', new_post_path, class: 'navbar-brand' %>
-      </div>
-  </nav>
-</header>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../posts/new">New Post</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <div id="secondaryContent" class="text-left">
+              <%= render 'devise/common/session' %>
+            </div>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container -->
+    </nav></br>
+  </header>
 
-<main role="main">
-  <%=yield%>
-  <div class = "pager">
-    <%= will_paginate @posts %>
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-lg-8">
+        <main role="main">
+          <%=yield%>
+        <main>
+      </div>
+
+      <div class="col-lg-4">
+        <div class="well">
+          <h4>Categorias</h4>
+            <div class="row">
+              <div class="col-lg-12">
+                <ul class="list-unstyled">
+                  
+                  <li>
+                  </li>
+
+                  <li><a href="#dinosaurs">Dinosaurs</a></li>
+                  <li><a href="#spaceships">Spaceships</a></li>
+                  <li><a href="#fried-foods">Fried Foods</a></li>
+                  <li><a href="#wild-animals">Wild Animals</a></li>
+                </ul>
+              </div>
+            </div>
+        </div><!-- /well -->
+      </div>
+    </div>
   </div>
-<main>
 
 </body>
 

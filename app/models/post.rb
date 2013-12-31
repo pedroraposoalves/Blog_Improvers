@@ -23,4 +23,5 @@ class Post < ActiveRecord::Base
 	after_validation :geocode
 
 	acts_as_taggable
+	ActsAsTaggableOn.remove_unused_tags = true
 end
